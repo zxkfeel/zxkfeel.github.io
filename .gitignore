@@ -1,5 +1,5 @@
-_site
+*.gem
+.bundle
 .sass-cache
-.jekyll-metadata
-node_modules/
-yarn.lock
+_site
+Gemfile.lock

@@ -1,40 +1,119 @@
-# Bef is a responsive jekyll theme
+# Tale
 
-Bef - Blog Enjoy Freedom is a responsive jekyll theme which created to be simple and freedom.
+[![Gem Version](https://badge.fury.io/rb/tale.svg)](https://badge.fury.io/rb/tale)
 
-## Demo
+Tale is a minimal Jekyll theme curated for storytellers. Checkout the demo [here](https://chesterhow.github.io/tale/).
 
-Check the theme in action [Demo](https://artemsheludko.github.io/bef/)
-
-The main page would look like this:
-
-![Main page preview](https://github.com/artemsheludko/bef/blob/master/assets/img/bef_main_page.jpg?raw=true)
-
-The post page would look like this:
-
-![Post page preview](https://github.com/artemsheludko/bef/blob/master/assets/img/bef_post.jpg?raw=true)
+![Tale screenshot](http://i.imgur.com/pXZrtmo.png)
 
 ## Features
+- Easy installation
+- Compatible with GitHub Pages
+- Responsive design (looks just as good on mobile)
+- Syntax highlighting, with the help of Pygments
+- Markdown and HTML text formatting
+- Pagination of posts
 
-- [Google Fonts](https://fonts.google.com/)
-- [Font Awesome](http://fontawesome.io/)
-- [Vide](http://vodkabears.github.io/vide/)
-- [Disqus](https://disqus.com/)
-- [MailChimp](https://mailchimp.com/)
-- [Formspree!](https://formspree.io/)
-- [Analytics](https://analytics.google.com/analytics/web/)
-- Share Buttons, Recent Post, Section Author, Contact and more...
+## Installation
+There are 3 ways to install this theme
 
-## Installation:
+1. Install it as a Ruby Gem (for self-hosted sites)
+2. Install it with the `jekyll-remote-theme` plugin (for GitHub Pages hosted sites)
+3. Fork the project directly
 
-Fork the ``master`` branch and delete ``gh-pages`` branch in it. This is important because ``gh-pages`` branch is used here only to host the blog. You should be using the master branch as the source and create a fresh ``gh-pages`` branch.
+### Ruby Gem method
+1. Add this line to your `Gemfile`:
+
+```ruby
+gem "tale"
+```
+
+2. Install the theme's gems and dependencies:
+
+```bash
+$ bundle
+```
+
+3. In `_config.yml` add these lines:
+
+```yaml
+theme:      tale
+
+permalink:  /:year-:month-:day/:title
+paginate:   5
+```
+
+Remove any other `theme:` lines.
+
+4. Rename `index.md` to `index.html`. Without this, the `jekyll-paginate` gem will not work.
+
+5. In `about.md`, change the `layout:` field to `post`:
+
+```Markdown
+layout: post
+```
+
+### GitHub Pages method
+1. Add these 2 lines in to your `Gemfile`:
+
+```ruby
+gem "jekyll-remote-theme"
+gem "jekyll-paginate"
+```
+
+2. Install the newly added gems:
+
+```bash
+$ bundle
+```
+
+3. In `_config.yml` add these lines:
+
+```yaml
+remote_theme: chesterhow/tale
+
+permalink:    /:year-:month-:day/:title
+paginate:     5
+
+plugins:
+  - jekyll-paginate
+  - jekyll-remote-theme
+```
+
+Remove any other `theme:` or `remote_theme:` lines.
+
+4. Rename `index.md` to `index.html`. Without this, the `jekyll-paginate` gem will not work.
+
+5. In `about.md`, change the `layout:` field to `post`:
+
+```Markdown
+layout: post
+```
+
+### Fork method
+1. Fork this repository
+
+2. Delete the unnecessary files/folders: `CODE_OF_CONDUCT.md`, `LICENSE`, `README.md`, `tale.gemspec`
+
+3. Delete the `baseurl` line in `_config.yml`:
+
+```yaml
+baseurl:  "/tale"   # delete this line
+```
+
+## Usage
+Once you've installed the theme, you're ready to work on your Jekyll site. To start off, I would recommend updating `_config.yml` with your site's details.
+
+To build and serve your site, run:
+
+```bash
+$ bundle exec jekyll serve
+```
+
+And you're all set! Head over to http://127.0.0.1:4000/ to see your site in action.
+
+## Contributing
+Found a bug or have a suggestion? Feel free to create an issue or make a pull request!
 
 ## License
-
-GNU General Public License v3.0
-
-## Donate
-
-<p>If you want to show your appreciation, buy me one <a href="https://www.buymeacoffee.com/artemsheludko" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a> ! Every five cups of coffee and a new theme for Jekyll is ready 😋</p>
-<p>Either way, your support is a way to thank me ❤️</p>
-<p align="center"><b>Thank you for your support!</b></p>
+See [LICENSE](https://github.com/chesterhow/tale/blob/master/LICENSE)
